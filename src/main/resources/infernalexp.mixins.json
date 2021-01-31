@@ -4,6 +4,7 @@
   "package": "dev.cernavskis.infernalexp.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
+	"GlowFireMixin"
   ],
   "client": [
   ],

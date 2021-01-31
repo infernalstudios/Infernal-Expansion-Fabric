@@ -23,9 +23,9 @@ public class InfernalExpansion implements ModInitializer {
     
     @Override
     public void onInitialize() {
-        IEBlocks.registerBlocks();
+        IEBlocks.init();
+        IEItems.init();
         IEEntityTypes.registerEntities();
         IEEntityTypes.registerEntityAttributes();
-        IEItems.registerItems();
     }
 }
