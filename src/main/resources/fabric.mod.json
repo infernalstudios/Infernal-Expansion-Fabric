@@ -3,26 +3,27 @@
   "id": "infernalexp",
   "version": "${version}",
 
-  "name": "Infernal Expansion",
-  "description": "A community-driven Vanilla+ mod that expands the Nether beyond the Nether Update, introducing new biomes, blocks, mobs, and more!",
+  "name": "Infernal Expansion - Fabric",
+  "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
-    "nekomaster1000"
+    "Me!"
   ],
   "contact": {
     "homepage": "https://discord.gg/UYGSn94",
-    "sources": "https://github.com/SwanX1/Infernal-Expansion-Fabric"
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
   },
 
-  "license": "CC0-1.0",
-  "icon": "assets/infernalexp/icon.png",
+  "license": "Apache-2.0",
+  "icon": "assets/infernalexp/Infernal_Expansion_Logo.png",
 
   "environment": "*",
+  "accessWidener": "infernalexp.accesswidener",
   "entrypoints": {
     "main": [
-      "dev.cernavskis.infernalexp.InfernalExpansion"
+      "dev.flenarn.infernalexp.InfernalExpansion"
     ],
     "client": [
-      "dev.cernavskis.infernalexp.InfernalExpansionClient"
+      "dev.flenarn.infernalexp.util.IEClient"
     ]
   },
   "mixins": [
@@ -30,8 +31,12 @@
   ],
 
   "depends": {
-    "fabricloader": ">=0.7.4",
+    "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.16.x"
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
   }
 }

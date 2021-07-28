@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "infernalexp:block/basalt_iron_ore_top",
+    "side": "infernalexp:block/basalt_iron_ore_side"
+  }
+}
