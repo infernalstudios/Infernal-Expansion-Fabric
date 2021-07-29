@@ -4,11 +4,15 @@ import dev.flenarn.infernalexp.blocks.BasalticMagmaBlock;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 
+import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.minecraft.block.Block;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.block.GlassBlock;
+import net.minecraft.block.Material;
 import net.minecraft.block.PaneBlock;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.tag.Tag;
 
 import static dev.flenarn.infernalexp.util.IEBlockRegistration.registerBlockWithDefaultItem;
 
@@ -19,7 +23,10 @@ public class IEBlocks {
      All blocks added by Infernal Expansion are registered here.
      */
 
+    public static final Block DULLSTONE = registerBlockWithDefaultItem("dullstone", new Block(FabricBlockSettings.of(Material.GLASS).strength(1.5F, 6.0F).sounds(IEBlockSoundGroups.DULLSTONE).requiresTool().breakByTool(FabricToolTags.PICKAXES)));
+
     public static final Block BASALTIC_MAGMA = registerBlockWithDefaultItem("basaltic_magma", new BasalticMagmaBlock(FabricBlockSettings.copyOf(Blocks.MAGMA_BLOCK).luminance(2)));
+
 
 
     /*

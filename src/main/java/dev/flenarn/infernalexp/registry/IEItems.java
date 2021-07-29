@@ -9,10 +9,6 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
-import static dev.flenarn.infernalexp.util.IEItemRegistration.registerItem;
-import static dev.flenarn.infernalexp.util.IEItemRegistration.registerMusicDiscItem;
-
-
 public class IEItems {
 
     /*
@@ -33,5 +29,14 @@ public class IEItems {
 
     @SuppressWarnings("unused")
     public static void register() {
+    }
+
+    public static Item registerItem(String ID, Item item) {
+        return Registry.register(Registry.ITEM, new Identifier(InfernalExpansion.MOD_ID, ID), item);
+    }
+
+    public static Item registerMusicDiscItem(String ID, int comparatorValue, SoundEvent soundEvent, Rarity rarity) {
+        Item.Settings settings = new Item.Settings().rarity(rarity).maxCount(1).group(InfernalExpansion.TAB);
+        return Registry.register(Registry.ITEM, new Identifier(InfernalExpansion.MOD_ID, ID), new AbstractDiscItem(comparatorValue, soundEvent, settings));
     }
 }

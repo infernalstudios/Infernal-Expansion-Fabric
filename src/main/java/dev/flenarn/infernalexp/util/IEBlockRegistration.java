@@ -1,24 +1,25 @@
 package dev.flenarn.infernalexp.util;
 
 import dev.flenarn.infernalexp.InfernalExpansion;
-import dev.flenarn.infernalexp.registry.IEItems;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.GlassBlock;
+
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.sound.BlockSoundGroup;
+
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 
+import static dev.flenarn.infernalexp.registry.IEItems.registerItem;
+
 public class IEBlockRegistration {
 
     public static Block registerBlockWithDefaultItem(String ID, Block block) {
-        IEItems.registerItem(ID, new BlockItem(block, new Item.Settings().group(InfernalExpansion.TAB)));
+        registerItem(ID, new BlockItem(block, new Item.Settings().group(InfernalExpansion.TAB)));
         return registerBlock(ID, block);
     }
 
