@@ -1,7 +1,6 @@
 package dev.flenarn.infernalexp.registry;
 
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.registry.Registry;
 
 import static dev.flenarn.infernalexp.registry.IESoundEvents.DULLSTONE_BREAK;
 import static dev.flenarn.infernalexp.registry.IESoundEvents.DULLSTONE_FALL;

@@ -11,11 +11,8 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.GlassBlock;
 import net.minecraft.block.Material;
 import net.minecraft.block.PaneBlock;
-import net.minecraft.item.PickaxeItem;
-import net.minecraft.tag.Tag;
 
 import static dev.flenarn.infernalexp.util.IEBlockRegistration.registerBlockWithDefaultItem;
-
 
 public class IEBlocks {
 

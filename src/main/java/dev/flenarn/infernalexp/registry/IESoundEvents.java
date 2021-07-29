@@ -1,12 +1,11 @@
 package dev.flenarn.infernalexp.registry;
 
 import dev.flenarn.infernalexp.InfernalExpansion;
-import net.minecraft.client.sound.Sound;
+
 import net.minecraft.sound.SoundEvent;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.lwjgl.system.CallbackI;
+
 
 public class IESoundEvents {
 
@@ -44,6 +43,27 @@ public class IESoundEvents {
     public static final SoundEvent EMBODY_AMBIENT = register("entity.embody.ambient");
     public static final SoundEvent EMBODY_HURT = register("entity.embody.hurt");
     public static final SoundEvent EMBODY_DEATH = register("entity.embody.death");
+
+    /*
+    Basalt Giant
+     */
+    public static final SoundEvent BASALT_GIANT_AMBIENT = register("entity.basalt_giant.ambient");
+    public static final SoundEvent BASALT_GIANT_HURT = register("entity.basalt_giant.hurt");
+    public static final SoundEvent BASALT_GIANT_DEATH = register("entity.basalt_giant.death");
+
+    /*
+    Skeletal Piglin
+     */
+    public static final SoundEvent SKELETAL_PIGLIN_AMBIENT = register("entity.skeletal_piglin.ambient");
+    public static final SoundEvent SKELETAL_PIGLIN_HURT = register("entity.skeletal_piglin.hurt");
+    public static final SoundEvent SKELETAL_PIGLIN_DEATH = register("entity.skeletal_piglin.death");
+
+    /*
+    Glowsquito
+     */
+    public static final SoundEvent GLOWSQUITO_LOOP = register("entity.glowsquito.loop");
+    public static final SoundEvent GLOWSQUITO_HURT = register("entity.glowsquito.hurt");
+    public static final SoundEvent GLOWSQUITO_DEATH = register("entity.glowsquito.death");
 
     /*
     Music Discs
