@@ -35,6 +35,7 @@ public class IEBlocks {
     Utility Functions
      */
 
+    @SuppressWarnings("unused")
     public static void register() {
     }
 
