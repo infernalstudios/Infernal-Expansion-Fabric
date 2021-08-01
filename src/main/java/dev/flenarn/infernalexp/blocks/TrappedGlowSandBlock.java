@@ -1,6 +1,6 @@
 package dev.flenarn.infernalexp.blocks;
 
-import dev.flenarn.infernalexp.client.rendering.particle.IEParticles;
+import dev.flenarn.infernalexp.registry.IEParticles;
 import dev.flenarn.infernalexp.registry.IEBlocks;
 
 import net.minecraft.block.BlockState;

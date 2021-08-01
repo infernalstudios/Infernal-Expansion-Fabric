@@ -4,10 +4,13 @@
   "package": "dev.flenarn.infernalexp.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
-    "common.MixinBubbleColumnBlock"
+    "common.MixinBubbleColumnBlock",
+    "common.MixinPersistentProjectileEntity",
+    "common.MixinLivingEntity"
   ],
   "client": [
-    "client.render.MixinParticleManager"
+    "client.render.MixinParticleManager",
+    "client.world.MixinBlockView"
   ],
   "injectors": {
     "defaultRequire": 1

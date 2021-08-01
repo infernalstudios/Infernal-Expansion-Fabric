@@ -1,7 +1,7 @@
 package dev.flenarn.infernalexp.mixin.client.render;
 
 import dev.flenarn.infernalexp.client.rendering.particle.GlowstoneSparkleParticle;
-import dev.flenarn.infernalexp.client.rendering.particle.IEParticles;
+import dev.flenarn.infernalexp.registry.IEParticles;
 import dev.flenarn.infernalexp.client.rendering.particle.InfectionParticle;
 
 import net.minecraft.client.particle.ParticleManager;

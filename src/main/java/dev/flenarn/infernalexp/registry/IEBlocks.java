@@ -1,9 +1,13 @@
 package dev.flenarn.infernalexp.registry;
 
+import dev.flenarn.infernalexp.blocks.BasaltIronOreBlock;
 import dev.flenarn.infernalexp.blocks.BasalticMagmaBlock;
+import dev.flenarn.infernalexp.blocks.GlowTorchBlock;
+import dev.flenarn.infernalexp.blocks.GlowWallTorchBlock;
 import dev.flenarn.infernalexp.blocks.GlowdustBlock;
 import dev.flenarn.infernalexp.blocks.TrappedGlowSandBlock;
 import dev.flenarn.infernalexp.blocks.templates.AbstractStoneButtonBlock;
+import dev.flenarn.infernalexp.blocks.templates.FungusCapBlock;
 import dev.flenarn.infernalexp.blocks.templates.LightUpPressurePlateBlock;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
@@ -13,18 +17,19 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.GlassBlock;
-import net.minecraft.block.MagmaBlock;
+import net.minecraft.block.LanternBlock;
 import net.minecraft.block.MapColor;
 import net.minecraft.block.Material;
 import net.minecraft.block.PaneBlock;
+import net.minecraft.block.PillarBlock;
 import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.SandBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
-import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
+import org.lwjgl.system.CallbackI;
 
 import java.util.function.ToIntFunction;
 
@@ -127,13 +132,130 @@ public class IEBlocks {
     public static final Block TRAPPED_GLOWDUST_SAND = registerBlockWithDefaultItem("trapped_glowdust_sand", new TrappedGlowSandBlock(0xFFC267, FabricBlockSettings.copyOf(GLOWDUST_SAND).luminance(5)));
 
     /*
+    Glowdust Stone Set
+     */
+    public static final Block GLOWDUST_STONE = registerBlockWithDefaultItem("glowdust_stone", new Block(FabricBlockSettings.copy(Blocks.SANDSTONE)));
+    public static final Block GLOWDUST_STONE_SLAB = registerBlockWithDefaultItem("glowdust_stone_slab", new SlabBlock(FabricBlockSettings.copy(GLOWDUST_STONE)));
+    public static final Block GLOWDUST_STONE_STAIRS = registerBlockWithDefaultItem("glowdust_stone_stairs", new StairsBlock(GLOWDUST_STONE.getDefaultState(), FabricBlockSettings.copy(GLOWDUST_STONE)));
+    public static final Block GLOWDUST_STONE_WALL = registerBlockWithDefaultItem("glowdust_stone_wall", new WallBlock(FabricBlockSettings.copy(GLOWDUST_STONE)));
+
+    /*
+    Glowdust StoneBrick Set
+     */
+    public static final Block GLOWDUST_STONE_BRICKS = registerBlockWithDefaultItem("glowdust_stone_bricks", new Block(FabricBlockSettings.copy(Blocks.SANDSTONE)));
+    public static final Block GLOWDUST_STONE_BRICK_SLAB = registerBlockWithDefaultItem("glowdust_stone_brick_slab", new SlabBlock(FabricBlockSettings.copy(GLOWDUST_STONE_BRICKS)));
+    public static final Block GLOWDUST_STONE_BRICK_STAIRS = registerBlockWithDefaultItem("glowdust_stone_brick_stairs", new StairsBlock(GLOWDUST_STONE_BRICKS.getDefaultState(), FabricBlockSettings.copy(GLOWDUST_STONE_BRICKS)));
+    public static final Block GLOWDUST_STONE_BRICK_WALL = registerBlockWithDefaultItem("glowdust_stone_brick_wall", new WallBlock(FabricBlockSettings.copy(GLOWDUST_STONE_BRICKS)));
+    public static final Block CRACKED_GLOWDUST_STONE_BRICKS = registerBlockWithDefaultItem("cracked_glowdust_stone_bricks", new Block(FabricBlockSettings.copy(GLOWDUST_STONE_BRICKS)));
+    public static final Block CHISELED_GLOWDUST_STONE_BRICKS = registerBlockWithDefaultItem("chiseled_glowdust_stone_bricks", new Block(FabricBlockSettings.copy(GLOWDUST_STONE_BRICKS)));
+
+    /*
     Minor Ground Blocks
      */
     public static final Block CRUMBLING_BLACKSTONE = registerBlockWithDefaultItem("crumbling_blackstone", new Block(FabricBlockSettings.copyOf(Blocks.NETHERRACK)));
     public static final Block RUBBLE = registerBlockWithDefaultItem("rubble", new Block(FabricBlockSettings.copyOf(Blocks.GRAVEL)));
     public static final Block SILT = registerBlockWithDefaultItem("silt", new Block(FabricBlockSettings.copyOf(Blocks.SAND)));
 
+    /*
+    Cobbled Basalt Set
+     */
+    public static final Block BASALT_COBBLED = registerBlockWithDefaultItem("basalt_cobbled", new PillarBlock(FabricBlockSettings.copyOf(Blocks.GRAVEL).sounds(BlockSoundGroup.BASALT)));
+    public static final Block BASALT_COBBLED_SLAB = registerBlockWithDefaultItem("basalt_cobbled_slab", new SlabBlock(FabricBlockSettings.copy(BASALT_COBBLED)));
+
+    /*
+    Basalt Set
+     */
+    public static final Block BASALT_SLAB = registerBlockWithDefaultItem("basalt_slab", new SlabBlock(FabricBlockSettings.copy(Blocks.BASALT)));
+    public static final Block BASALT_STAIRS = registerBlockWithDefaultItem("basalt_stairs", new StairsBlock(Blocks.BASALT.getDefaultState(), FabricBlockSettings.copy(Blocks.BASALT)));
+    public static final Block BASALT_WALL = registerBlockWithDefaultItem("basalt_wall", new WallBlock(FabricBlockSettings.copy(Blocks.BASALT)));
+    public static final Block BASALT_BUTTON = registerBlockWithDefaultItem("basalt_button", new AbstractStoneButtonBlock(FabricBlockSettings.copy(Blocks.BASALT)));
+
+    /*
+    Basalt Brick Set
+     */
+    public static final Block BASALT_BRICKS = registerBlockWithDefaultItem("basalt_bricks", new PillarBlock(FabricBlockSettings.copy(Blocks.BASALT)));
+    public static final Block BASALT_BRICK_SLAB = registerBlockWithDefaultItem("basalt_brick_slab", new SlabBlock(FabricBlockSettings.copy(BASALT_BRICKS)));
+    public static final Block BASALT_BRICK_STAIRS = registerBlockWithDefaultItem("basalt_brick_stairs", new StairsBlock(Blocks.BASALT.getDefaultState(), FabricBlockSettings.copy(BASALT_BRICKS)));
+    public static final Block BASALT_BRICK_WALL = registerBlockWithDefaultItem("basalt_brick_wall", new WallBlock(FabricBlockSettings.copy(BASALT_BRICKS)));
+    public static final Block CRACKED_BASALT_BRICKS = registerBlockWithDefaultItem("cracked_basalt_bricks", new PillarBlock(FabricBlockSettings.copy(BASALT_BRICKS)));
+    public static final Block CHISELED_BASALT_BRICKS = registerBlockWithDefaultItem("chiseled_basalt_bricks", new PillarBlock(FabricBlockSettings.copy(BASALT_BRICKS)));
+    public static final Block MAGMATIC_CHISELED_BASALT_BRICKS = registerBlockWithDefaultItem("magmatic_chiseled_basalt_bricks", new PillarBlock(FabricBlockSettings.copy(BASALT_BRICKS)));
+
+    /*
+    Basalt Iron Ore
+     */
+    public static final Block BASALT_IRON_ORE = registerBlockWithDefaultItem("basalt_iron_ore", new BasaltIronOreBlock(FabricBlockSettings.copy(Blocks.NETHER_GOLD_ORE)));
+
+    /*
+    Basaltic Magma
+     */
     public static final Block BASALTIC_MAGMA = registerBlockWithDefaultItem("basaltic_magma", new BasalticMagmaBlock(FabricBlockSettings.copyOf(Blocks.MAGMA_BLOCK).luminance(2)));
+
+    /*
+    Soul Soil
+     */
+    public static final Block SOUL_SAND_SLAB = registerBlockWithDefaultItem("soul_sand_slab", new SlabBlock(FabricBlockSettings.copy(Blocks.SOUL_SAND)));
+    public static final Block SOUL_SAND_STAIRS = registerBlockWithDefaultItem("soul_sand_stairs", new StairsBlock(Blocks.SOUL_SAND.getDefaultState(), FabricBlockSettings.copy(Blocks.SOUL_SAND)));
+
+    /*
+    Soul Soil Set
+     */
+    public static final Block SOUL_SOIL_SLAB = registerBlockWithDefaultItem("soul_soil_slab", new SlabBlock(FabricBlockSettings.copy(Blocks.SOUL_SOIL)));
+    public static final Block SOUL_SOIL_STAIRS = registerBlockWithDefaultItem("soul_soil_stairs", new StairsBlock(Blocks.SOUL_SOIL.getDefaultState(), FabricBlockSettings.copy(Blocks.SOUL_SOIL)));
+
+    /*
+    Soul Stone Set
+     */
+    public static final Block SOUL_STONE = registerBlockWithDefaultItem("soul_stone", new Block(FabricBlockSettings.copyOf(Blocks.COBBLESTONE).sounds(IEBlockSoundGroups.SOUL_STONE)));
+    public static final Block SOUL_STONE_SLAB = registerBlockWithDefaultItem("soul_stone_slab", new SlabBlock(FabricBlockSettings.copy(SOUL_STONE)));
+    public static final Block SOUL_STONE_STAIRS = registerBlockWithDefaultItem("soul_stone_stairs", new StairsBlock(SOUL_STONE.getDefaultState(), FabricBlockSettings.copy(SOUL_STONE)));
+    public static final Block SOUL_STONE_WALL = registerBlockWithDefaultItem("soul_stone_wall", new WallBlock(FabricBlockSettings.copy(SOUL_STONE)));
+
+    /*
+    Soul Slate Set
+     */
+    public static final Block SOUL_SLATE = registerBlockWithDefaultItem("soul_slate", new Block(FabricBlockSettings.copyOf(Blocks.STONE_BRICKS).sounds(IEBlockSoundGroups.SOUL_STONE)));
+    public static final Block SOUL_SLATE_SLAB = registerBlockWithDefaultItem("soul_slate_slab", new SlabBlock(FabricBlockSettings.copy(SOUL_SLATE)));
+    public static final Block SOUL_SLATE_STAIRS = registerBlockWithDefaultItem("soul_slate_stairs", new StairsBlock(SOUL_SLATE.getDefaultState(), FabricBlockSettings.copy(SOUL_SLATE)));
+    public static final Block SOUL_SLATE_BUTTON = registerBlockWithDefaultItem("soul_slate_button", new AbstractStoneButtonBlock(FabricBlockSettings.copy(SOUL_SLATE)));
+    public static final Block SOUL_SLATE_PRESSURE_PLATE = registerBlockWithDefaultItem("soul_slate_pressure_plate", new LightUpPressurePlateBlock(PressurePlateBlock.ActivationRule.MOBS, FabricBlockSettings.copyOf(SOUL_SLATE).luminance(getLuminanceValueLit(15))));
+
+    /*
+    Soul Stone Brick Set
+     */
+    public static final Block SOUL_STONE_BRICKS = registerBlockWithDefaultItem("soul_stone_bricks", new Block(FabricBlockSettings.copy(SOUL_STONE)));
+    public static final Block SOUL_STONE_BRICK_SLAB = registerBlockWithDefaultItem("soul_stone_brick_slab", new SlabBlock(FabricBlockSettings.copy(SOUL_STONE_BRICKS)));
+    public static final Block SOUL_STONE_BRICK_STAIRS = registerBlockWithDefaultItem("soul_stone_brick_stairs", new StairsBlock(SOUL_STONE_BRICKS.getDefaultState(), FabricBlockSettings.copy(SOUL_STONE_BRICKS)));
+    public static final Block SOUL_STONE_BRICK_WALL = registerBlockWithDefaultItem("soul_stone_brick_wall", new WallBlock(FabricBlockSettings.copy(SOUL_STONE_BRICKS)));
+    public static final Block CRACKED_SOUL_STONE_BRICKS = registerBlockWithDefaultItem("cracked_soul_stone_bricks", new Block(FabricBlockSettings.copy(SOUL_STONE_BRICKS)));
+    public static final Block CHISELED_SOUL_STONE_BRICKS = registerBlockWithDefaultItem("chiseled_soul_stone_bricks", new PillarBlock(FabricBlockSettings.copy(SOUL_STONE_BRICKS)));
+    public static final Block CHARGED_CHISELED_SOUL_STONE_BRICKS = registerBlockWithDefaultItem("charged_chiseled_soul_stone_bricks", new PillarBlock(FabricBlockSettings.copy(SOUL_STONE_BRICKS)));
+
+    /*
+    Soul Slate Brick Set
+     */
+    public static final Block SOUL_SLATE_BRICKS = registerBlockWithDefaultItem("soul_slate_bricks", new Block(FabricBlockSettings.copy(SOUL_SLATE)));
+    public static final Block SOUL_SLATE_BRICK_SLAB = registerBlockWithDefaultItem("soul_slate_brick_slab", new SlabBlock(FabricBlockSettings.copy(SOUL_SLATE_BRICKS)));
+    public static final Block SOUL_SLATE_BRICK_STAIRS = registerBlockWithDefaultItem("soul_slate_brick_stairs", new StairsBlock(SOUL_SLATE_BRICKS.getDefaultState(), FabricBlockSettings.copy(SOUL_SLATE_BRICKS)));
+    public static final Block SOUL_SLATE_BRICK_WALL = registerBlockWithDefaultItem("soul_slate_brick_wall", new WallBlock(FabricBlockSettings.copy(SOUL_SLATE_BRICKS)));
+    public static final Block CRACKED_SOUL_SLATE_BRICKS = registerBlockWithDefaultItem("cracked_soul_slate_bricks", new Block(FabricBlockSettings.copy(SOUL_SLATE_BRICKS)));
+    public static final Block CHISELED_SOUL_SLATE_BRICKS = registerBlockWithDefaultItem("chiseled_soul_slate_bricks", new PillarBlock(FabricBlockSettings.copy(SOUL_SLATE_BRICKS)));
+    public static final Block CHARGED_CHISELED_SOUL_SLATE_BRICKS = registerBlockWithDefaultItem("charged_chiseled_soul_slate_bricks", new PillarBlock(FabricBlockSettings.copy(SOUL_SLATE_BRICKS)));
+
+    /*
+    Fungus Caps
+     */
+    public static final Block CRIMSON_FUNGUS_CAP = registerBlockWithDefaultItem("crimson_fungus_cap", new FungusCapBlock(FabricBlockSettings.copy(Blocks.NETHER_WART_BLOCK)));
+    public static final Block WARPED_FUNGUS_CAP = registerBlockWithDefaultItem("warped_fungus_cap", new FungusCapBlock(FabricBlockSettings.copy(Blocks.WARPED_WART_BLOCK)));
+    public static final Block LUMINOUS_FUNGUS_CAP = registerBlockWithDefaultItem("luminous_fungus_cap", new FungusCapBlock(FabricBlockSettings.copyOf(Blocks.NETHER_WART_BLOCK).luminance(14)));
+
+    /*
+    Glow Set
+     */
+    public static final Block GLOW_LANTERN = registerBlockWithDefaultItem("glow_lantern", new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN)));
+    public static final Block GLOW_TORCH = registerBlockWithDefaultItem("glow_torch", new GlowTorchBlock(FabricBlockSettings.copy(Blocks.TORCH)));
+    public static final Block GLOW_TORCH_WALL = registerBlock("glow_torch_wall", new GlowWallTorchBlock(FabricBlockSettings.copy(GLOW_TORCH).dropsLike(GLOW_TORCH)));
+
 
     /*
     Glass Set

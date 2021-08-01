@@ -1,5 +1,7 @@
 package dev.flenarn.infernalexp.items;
 
+import dev.flenarn.infernalexp.access.PersistentProjectileEntityAccess;
+
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -12,6 +14,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -33,10 +36,6 @@ public class GlowsilkBowItem extends BowItem {
             ItemStack itemStack = playerEntity.getArrowType(stack);
 
             int i = this.getMaxUseTime(stack) - remainingUseTicks;
-            /*i = (int) flag; Find way to mimic the "onArrowLoose" event to get charge level of arrow fired.
-
-            if (i < 0) return; */
-
             if (!itemStack.isEmpty() || flag) {
                 if (itemStack.isEmpty()) {
                     itemStack = new ItemStack(Items.ARROW);
@@ -76,7 +75,7 @@ public class GlowsilkBowItem extends BowItem {
                             persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
                         }
 
-                        //Do glow here
+                        ((PersistentProjectileEntityAccess) persistentProjectileEntity).setGlow(true);
 
                         world.spawnEntity(persistentProjectileEntity);
                     }
@@ -85,6 +84,8 @@ public class GlowsilkBowItem extends BowItem {
                     if (!flag1 && !playerEntity.getAbilities().creativeMode) {
                         playerEntity.getInventory().removeOne(itemStack);
                     }
+
+                    playerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
                 }
             }
         }

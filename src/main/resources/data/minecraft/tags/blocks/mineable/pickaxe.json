@@ -3,6 +3,10 @@
   "values": [
     "infernalexp:glowstone_brick_wall",
     "infernalexp:dimstone_brick_wall",
-    "infernalexp:dullstone_brick_wall"
+    "infernalexp:dullstone_brick_wall",
+    "infernalexp:glowdust_stone_wall",
+    "infernalexp:glowdust_stone_brick_wall",
+    "infernalexp:basalt_wall",
+    "infernalexp:basalt_iron_ore"
   ]
 }

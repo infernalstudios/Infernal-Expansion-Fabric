@@ -8,6 +8,5 @@ accessible    method    net/minecraft/block/StoneButtonBlock                    
 accessible    method    net/minecraft/block/PressurePlateBlock                      <init>                       (Lnet/minecraft/block/PressurePlateBlock$ActivationRule;Lnet/minecraft/block/AbstractBlock$Settings;)V
 accessible    method    net/minecraft/particle/DefaultParticleType                  <init>                       (Z)V
 accessible    method    net/minecraft/client/item/ModelPredicateProviderRegistry    register                     (Lnet/minecraft/item/Item;Lnet/minecraft/util/Identifier;Lnet/minecraft/client/item/UnclampedModelPredicateProvider;)V
-
-
-
+accessible    method    net/minecraft/block/TorchBlock                              <init>                       (Lnet/minecraft/block/AbstractBlock$Settings;Lnet/minecraft/particle/ParticleEffect;)V
+accessible method net/minecraft/entity/effect/StatusEffect <init> (Lnet/minecraft/entity/effect/StatusEffectType;I)V
