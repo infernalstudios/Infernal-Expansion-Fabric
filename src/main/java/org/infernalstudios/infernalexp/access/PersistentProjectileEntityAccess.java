@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.access;
+package org.infernalstudios.infernalexp.access;
 
 public interface PersistentProjectileEntityAccess {
 

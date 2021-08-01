@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.registry;
+package org.infernalstudios.infernalexp.registry;
 
 
 import net.minecraft.particle.DefaultParticleType;

@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.blocks.templates;
+package org.infernalstudios.infernalexp.blocks.templates;
 
 import net.minecraft.block.StoneButtonBlock;
 

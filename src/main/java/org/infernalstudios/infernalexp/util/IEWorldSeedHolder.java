@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.util;
+package org.infernalstudios.infernalexp.util;
 
 public class IEWorldSeedHolder {
 

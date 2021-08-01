@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.items.templates;
+package org.infernalstudios.infernalexp.items.templates;
 
 import net.minecraft.item.MusicDiscItem;
 import net.minecraft.sound.SoundEvent;

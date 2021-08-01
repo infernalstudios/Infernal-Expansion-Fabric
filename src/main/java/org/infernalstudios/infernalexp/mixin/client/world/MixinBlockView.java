@@ -1,6 +1,6 @@
-package dev.flenarn.infernalexp.mixin.client.world;
+package org.infernalstudios.infernalexp.mixin.client.world;
 
-import dev.flenarn.infernalexp.client.rendering.DynamicLightingHandler;
+import org.infernalstudios.infernalexp.client.rendering.DynamicLightingHandler;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.util.math.BlockPos;

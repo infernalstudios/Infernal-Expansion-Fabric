@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.blocks;
+package org.infernalstudios.infernalexp.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

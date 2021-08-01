@@ -1,14 +1,14 @@
-package dev.flenarn.infernalexp.registry;
+package org.infernalstudios.infernalexp.registry;
 
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.sound.SoundEvents;
 
-import static dev.flenarn.infernalexp.registry.IESoundEvents.DULLSTONE_BREAK;
-import static dev.flenarn.infernalexp.registry.IESoundEvents.DULLSTONE_FALL;
-import static dev.flenarn.infernalexp.registry.IESoundEvents.DULLSTONE_HIT;
-import static dev.flenarn.infernalexp.registry.IESoundEvents.DULLSTONE_PLACE;
-import static dev.flenarn.infernalexp.registry.IESoundEvents.DULLSTONE_STEP;
-import static dev.flenarn.infernalexp.registry.IESoundEvents.SOUL_STONE_BREAK;
+import static org.infernalstudios.infernalexp.registry.IESoundEvents.DULLSTONE_BREAK;
+import static org.infernalstudios.infernalexp.registry.IESoundEvents.DULLSTONE_FALL;
+import static org.infernalstudios.infernalexp.registry.IESoundEvents.DULLSTONE_HIT;
+import static org.infernalstudios.infernalexp.registry.IESoundEvents.DULLSTONE_PLACE;
+import static org.infernalstudios.infernalexp.registry.IESoundEvents.DULLSTONE_STEP;
+import static org.infernalstudios.infernalexp.registry.IESoundEvents.SOUL_STONE_BREAK;
 
 public class IEBlockSoundGroups {
 

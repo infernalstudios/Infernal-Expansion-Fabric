@@ -1,6 +1,6 @@
-package dev.flenarn.infernalexp.mixin.common;
+package org.infernalstudios.infernalexp.mixin.common;
 
-import dev.flenarn.infernalexp.registry.IEBlocks;
+import org.infernalstudios.infernalexp.registry.IEBlocks;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

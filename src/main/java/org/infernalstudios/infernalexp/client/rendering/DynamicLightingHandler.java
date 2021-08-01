@@ -1,7 +1,7 @@
-package dev.flenarn.infernalexp.client.rendering;
+package org.infernalstudios.infernalexp.client.rendering;
 
-import dev.flenarn.infernalexp.access.PersistentProjectileEntityAccess;
-import dev.flenarn.infernalexp.registry.IEEffects;
+import org.infernalstudios.infernalexp.access.PersistentProjectileEntityAccess;
+import org.infernalstudios.infernalexp.registry.IEEffects;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 

@@ -1,7 +1,7 @@
-package dev.flenarn.infernalexp;
+package org.infernalstudios.infernalexp;
 
-import dev.flenarn.infernalexp.registry.IEBlocks;
-import dev.flenarn.infernalexp.registry.IEItems;
+import org.infernalstudios.infernalexp.registry.IEBlocks;
+import org.infernalstudios.infernalexp.registry.IEItems;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;

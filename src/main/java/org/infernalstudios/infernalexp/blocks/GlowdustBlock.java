@@ -1,7 +1,7 @@
-package dev.flenarn.infernalexp.blocks;
+package org.infernalstudios.infernalexp.blocks;
 
 
-import dev.flenarn.infernalexp.registry.IEBlocks;
+import org.infernalstudios.infernalexp.registry.IEBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SnowBlock;
 import net.minecraft.item.ItemPlacementContext;

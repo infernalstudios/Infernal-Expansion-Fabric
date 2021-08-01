@@ -1,8 +1,8 @@
-package dev.flenarn.infernalexp.util;
+package org.infernalstudios.infernalexp.util;
 
-import dev.flenarn.infernalexp.registry.IEBlocks;
+import org.infernalstudios.infernalexp.registry.IEBlocks;
 
-import dev.flenarn.infernalexp.registry.IEItems;
+import org.infernalstudios.infernalexp.registry.IEItems;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;

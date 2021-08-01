@@ -1,6 +1,6 @@
-package dev.flenarn.infernalexp.mixin.common;
+package org.infernalstudios.infernalexp.mixin.common;
 
-import dev.flenarn.infernalexp.client.rendering.DynamicLightingHandler;
+import org.infernalstudios.infernalexp.client.rendering.DynamicLightingHandler;
 import net.minecraft.entity.LivingEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

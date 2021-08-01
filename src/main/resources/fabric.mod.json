@@ -20,10 +20,10 @@
   "accessWidener": "infernalexp.accesswidener",
   "entrypoints": {
     "main": [
-      "dev.flenarn.infernalexp.InfernalExpansion"
+      "org.infernalstudios.infernalexp.InfernalExpansion"
     ],
     "client": [
-      "dev.flenarn.infernalexp.util.IEClient"
+      "org.infernalstudios.infernalexp.util.IEClient"
     ]
   },
   "mixins": [

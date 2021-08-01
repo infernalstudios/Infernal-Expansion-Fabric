@@ -1,6 +1,6 @@
-package dev.flenarn.infernalexp.items;
+package org.infernalstudios.infernalexp.items;
 
-import dev.flenarn.infernalexp.access.PersistentProjectileEntityAccess;
+import org.infernalstudios.infernalexp.access.PersistentProjectileEntityAccess;
 
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;

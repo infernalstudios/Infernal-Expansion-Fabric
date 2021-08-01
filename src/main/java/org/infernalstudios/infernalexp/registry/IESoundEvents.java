@@ -1,12 +1,10 @@
-package dev.flenarn.infernalexp.registry;
+package org.infernalstudios.infernalexp.registry;
 
-import dev.flenarn.infernalexp.InfernalExpansion;
+import org.infernalstudios.infernalexp.InfernalExpansion;
 
-import net.minecraft.client.sound.Sound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.lwjgl.system.CallbackI;
 
 
 public class IESoundEvents {

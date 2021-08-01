@@ -1,6 +1,6 @@
-package dev.flenarn.infernalexp.blocks;
+package org.infernalstudios.infernalexp.blocks;
 
-import dev.flenarn.infernalexp.registry.IEParticles;
+import org.infernalstudios.infernalexp.registry.IEParticles;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.BlockState;

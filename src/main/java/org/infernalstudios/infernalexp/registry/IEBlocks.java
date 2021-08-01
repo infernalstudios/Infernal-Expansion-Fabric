@@ -1,14 +1,14 @@
-package dev.flenarn.infernalexp.registry;
+package org.infernalstudios.infernalexp.registry;
 
-import dev.flenarn.infernalexp.blocks.BasaltIronOreBlock;
-import dev.flenarn.infernalexp.blocks.BasalticMagmaBlock;
-import dev.flenarn.infernalexp.blocks.GlowTorchBlock;
-import dev.flenarn.infernalexp.blocks.GlowWallTorchBlock;
-import dev.flenarn.infernalexp.blocks.GlowdustBlock;
-import dev.flenarn.infernalexp.blocks.TrappedGlowSandBlock;
-import dev.flenarn.infernalexp.blocks.templates.AbstractStoneButtonBlock;
-import dev.flenarn.infernalexp.blocks.templates.FungusCapBlock;
-import dev.flenarn.infernalexp.blocks.templates.LightUpPressurePlateBlock;
+import org.infernalstudios.infernalexp.blocks.BasaltIronOreBlock;
+import org.infernalstudios.infernalexp.blocks.BasalticMagmaBlock;
+import org.infernalstudios.infernalexp.blocks.GlowTorchBlock;
+import org.infernalstudios.infernalexp.blocks.GlowWallTorchBlock;
+import org.infernalstudios.infernalexp.blocks.GlowdustBlock;
+import org.infernalstudios.infernalexp.blocks.TrappedGlowSandBlock;
+import org.infernalstudios.infernalexp.blocks.templates.AbstractStoneButtonBlock;
+import org.infernalstudios.infernalexp.blocks.templates.FungusCapBlock;
+import org.infernalstudios.infernalexp.blocks.templates.LightUpPressurePlateBlock;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -29,12 +29,11 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.state.property.Properties;
-import org.lwjgl.system.CallbackI;
 
 import java.util.function.ToIntFunction;
 
-import static dev.flenarn.infernalexp.util.IEBlockRegistration.registerBlock;
-import static dev.flenarn.infernalexp.util.IEBlockRegistration.registerBlockWithDefaultItem;
+import static org.infernalstudios.infernalexp.util.IEBlockRegistration.registerBlock;
+import static org.infernalstudios.infernalexp.util.IEBlockRegistration.registerBlockWithDefaultItem;
 
 public class IEBlocks {
 

@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.registry;
+package org.infernalstudios.infernalexp.registry;
 
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectType;

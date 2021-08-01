@@ -1,6 +1,6 @@
-package dev.flenarn.infernalexp.util;
+package org.infernalstudios.infernalexp.util;
 
-import dev.flenarn.infernalexp.InfernalExpansion;
+import org.infernalstudios.infernalexp.InfernalExpansion;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,13 +13,12 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
-
-import static dev.flenarn.infernalexp.registry.IEItems.registerItem;
+import org.infernalstudios.infernalexp.registry.IEItems;
 
 public class IEBlockRegistration {
 
     public static Block registerBlockWithDefaultItem(String ID, Block block) {
-        registerItem(ID, new BlockItem(block, new Item.Settings().group(InfernalExpansion.TAB)));
+        IEItems.registerItem(ID, new BlockItem(block, new Item.Settings().group(InfernalExpansion.TAB)));
         return registerBlock(ID, block);
     }
 

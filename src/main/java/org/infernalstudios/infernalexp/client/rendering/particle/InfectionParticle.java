@@ -1,6 +1,5 @@
-package dev.flenarn.infernalexp.client.rendering.particle;
+package org.infernalstudios.infernalexp.client.rendering.particle;
 
-import com.ibm.icu.text.MessagePattern;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 

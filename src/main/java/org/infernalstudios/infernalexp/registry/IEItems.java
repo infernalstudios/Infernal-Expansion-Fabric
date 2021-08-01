@@ -1,8 +1,8 @@
-package dev.flenarn.infernalexp.registry;
+package org.infernalstudios.infernalexp.registry;
 
-import dev.flenarn.infernalexp.InfernalExpansion;
-import dev.flenarn.infernalexp.items.GlowsilkBowItem;
-import dev.flenarn.infernalexp.items.templates.AbstractDiscItem;
+import org.infernalstudios.infernalexp.InfernalExpansion;
+import org.infernalstudios.infernalexp.items.GlowsilkBowItem;
+import org.infernalstudios.infernalexp.items.templates.AbstractDiscItem;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.mob.MobEntity;

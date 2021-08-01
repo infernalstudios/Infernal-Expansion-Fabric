@@ -1,7 +1,7 @@
-package dev.flenarn.infernalexp.mixin.common;
+package org.infernalstudios.infernalexp.mixin.common;
 
-import dev.flenarn.infernalexp.access.PersistentProjectileEntityAccess;
-import dev.flenarn.infernalexp.client.rendering.DynamicLightingHandler;
+import org.infernalstudios.infernalexp.access.PersistentProjectileEntityAccess;
+import org.infernalstudios.infernalexp.client.rendering.DynamicLightingHandler;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.data.DataTracker;
@@ -10,6 +10,7 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 
 import net.minecraft.nbt.NbtCompound;
+import org.lwjgl.system.CallbackI;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;

@@ -1,4 +1,4 @@
-package dev.flenarn.infernalexp.client.rendering.particle;
+package org.infernalstudios.infernalexp.client.rendering.particle;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
