@@ -2,9 +2,11 @@ package dev.flenarn.infernalexp.registry;
 
 import dev.flenarn.infernalexp.InfernalExpansion;
 
+import net.minecraft.client.sound.Sound;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.lwjgl.system.CallbackI;
 
 
 public class IESoundEvents {
@@ -64,6 +66,60 @@ public class IESoundEvents {
     public static final SoundEvent GLOWSQUITO_LOOP = register("entity.glowsquito.loop");
     public static final SoundEvent GLOWSQUITO_HURT = register("entity.glowsquito.hurt");
     public static final SoundEvent GLOWSQUITO_DEATH = register("entity.glowsquito.death");
+
+    /*
+    Blindsight
+     */
+    public static final SoundEvent BLINDSIGHT_AMBIENT = register("entity.blindsight.ambient");
+    public static final SoundEvent BLINDSIGHT_HURT = register("entity.blindsight.hurt");
+    public static final SoundEvent BLINDSIGHT_DEATH = register("entity.blindsight.death");
+
+    /*
+    Blackstone Dwarf
+     */
+    public static final SoundEvent BLACKSTONE_DWARF_AMBIENT = register("entity.dwarf.ambient");
+    public static final SoundEvent BLACKSTONE_DWARF_HURT = register("entity.dwarf.hurt");
+    public static final SoundEvent BLACKSTONE_DWARF_DEATH = register("entity.dwarf.death");
+
+    /*
+    Glowsilk Moth
+     */
+    public static final SoundEvent GLOWSILK_MOTH_AMBIENT = register("entity.glowsilk_moth.ambient");
+    public static final SoundEvent GLOWSILK_MOTH_HURT = register("entity.glowsilk_moth.hurt");
+    public static final SoundEvent GLOWSILK_MOTH_DEATH = register("entity.glowsilk_moth.death");
+
+    /*
+    Glaw
+     */
+    public static final SoundEvent GLAW_AMBIENT = register("entity.glaw.ambient");
+    public static final SoundEvent GLAW_HURT = register("entity.glaw.hurt");
+    public static final SoundEvent GLAW_DEATH = register("entity.glaw.death");
+
+    /*
+    Smolt
+     */
+    public static final SoundEvent SMOLT_AMBIENT = register("entity.smolt.ambient");
+    public static final SoundEvent SMOLT_HURT = register("entity.smolt.hurt");
+    public static final SoundEvent SMOLT_DEATH = register("entity.smolt.death");
+
+    /*
+    Pyrno
+     */
+    public static final SoundEvent PYRNO_AMBIENT = register("entity.pyrno.ambient");
+    public static final SoundEvent PYRNO_HURT = register("entity.pyrno.hurt");
+    public static final SoundEvent PYRNO_DEATH = register("entity.pyrno.death");
+
+    /*
+    Glowstone Canyon Ambient
+     */
+    public static final SoundEvent AMBIENT_GLOWSTONE_CANYON_LOOP = register("ambient.glowstone_canyon.loop");
+    public static final SoundEvent AMBIENT_GLOWSTONE_CANYON_MOOD = register("ambient.glowstone_canyon.mood");
+    public static final SoundEvent AMBIENT_GLOWSTONE_CANYON_ADDITIONS = register("ambient.glowstone_canyon.additions");
+
+    /*
+    Glowstone Canyon Music
+     */
+    public static final SoundEvent MUSIC_NETHER_GLOWSTONE_CANYON = register("music.nether.glowstone_canyon");
 
     /*
     Music Discs

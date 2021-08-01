@@ -1,2 +1,13 @@
 accessWidener	v1	named
+accessible    class     net/minecraft/client/particle/ParticleManager$SpriteAwareFactory
+
+
 accessible    method    net/minecraft/block/PaneBlock                               <init>                       (Lnet/minecraft/block/AbstractBlock$Settings;)V
+accessible    method    net/minecraft/block/StairsBlock                             <init>                       (Lnet/minecraft/block/BlockState;Lnet/minecraft/block/AbstractBlock$Settings;)V
+accessible    method    net/minecraft/block/StoneButtonBlock                        <init>                       (Lnet/minecraft/block/BlockState;Lnet/minecraft/block/AbstractBlock$Settings;)V
+accessible    method    net/minecraft/block/PressurePlateBlock                      <init>                       (Lnet/minecraft/block/PressurePlateBlock$ActivationRule;Lnet/minecraft/block/AbstractBlock$Settings;)V
+accessible    method    net/minecraft/particle/DefaultParticleType                  <init>                       (Z)V
+accessible    method    net/minecraft/client/item/ModelPredicateProviderRegistry    register                     (Lnet/minecraft/item/Item;Lnet/minecraft/util/Identifier;Lnet/minecraft/client/item/UnclampedModelPredicateProvider;)V
+
+
+

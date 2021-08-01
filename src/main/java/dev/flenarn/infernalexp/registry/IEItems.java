@@ -1,9 +1,13 @@
 package dev.flenarn.infernalexp.registry;
 
 import dev.flenarn.infernalexp.InfernalExpansion;
+import dev.flenarn.infernalexp.items.GlowsilkBowItem;
 import dev.flenarn.infernalexp.items.templates.AbstractDiscItem;
 
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
@@ -18,9 +22,18 @@ public class IEItems {
     public static final Item DISC_FLUSH = registerMusicDiscItem("music_disc_flush", 7, IESoundEvents.MUSIC_DISC_FLUSH, Rarity.RARE);
 
     /*
+    Glowsilk Bow
+     */
+    public static final Item GLOWSILK_BOW = registerItem("glowsilk_bow", new GlowsilkBowItem(new Item.Settings().maxDamage(384).group(InfernalExpansion.TAB)));
+
+    /*
     Util Items
      */
     public static final Item TAB_ITEM = registerItem("tab_icon", new Item(new Item.Settings()));
+
+    /*
+    Spawn Eggs
+     */
 
 
     /*
@@ -38,5 +51,9 @@ public class IEItems {
     public static Item registerMusicDiscItem(String ID, int comparatorValue, SoundEvent soundEvent, Rarity rarity) {
         Item.Settings settings = new Item.Settings().rarity(rarity).maxCount(1).group(InfernalExpansion.TAB);
         return Registry.register(Registry.ITEM, new Identifier(InfernalExpansion.MOD_ID, ID), new AbstractDiscItem(comparatorValue, soundEvent, settings));
+    }
+
+    public static Item registerSpawnEgg(String ID, EntityType<? extends MobEntity> type, int primaryColor, int secondaryColor) {
+        return registerItem(ID, new SpawnEggItem(type, primaryColor, secondaryColor, new Item.Settings().group(InfernalExpansion.TAB)));
     }
 }

@@ -7,7 +7,7 @@
     "common.MixinBubbleColumnBlock"
   ],
   "client": [
-
+    "client.render.MixinParticleManager"
   ],
   "injectors": {
     "defaultRequire": 1
