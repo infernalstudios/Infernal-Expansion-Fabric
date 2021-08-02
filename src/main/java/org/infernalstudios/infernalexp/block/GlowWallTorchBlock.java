@@ -22,11 +22,10 @@ public class GlowWallTorchBlock extends WallTorchBlock {
     @Environment(EnvType.CLIENT)
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        Direction direction0 = state.get(HORIZONTAL_FACING);
         double d = (double)pos.getX() + 0.5D;
         double e = (double)pos.getY() + 0.7D;
         double f = (double)pos.getZ() + 0.5D;
-        Direction direction1 = direction0.getOpposite();
+        Direction direction1 = state.get(FACING).getOpposite();
         world.addParticle(ParticleTypes.SMOKE, d, e, f, 0.0D, 0.0D, 0.0D);
         if (random.nextInt(2) == 1) {
             world.addParticle(IEParticles.GLOWSTONE_SPARKLE, d + 0.27D * (double) direction1.getOffsetX(), e + 0.22D, f + 0.27D * (double) direction1.getOffsetZ(), 0.0D, 0.0D, 0.0D);

@@ -254,7 +254,7 @@ public class IEBlocks {
     Glow Set
      */
     public static final Block GLOW_LANTERN = registerBlockWithDefaultItem("glow_lantern", new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN)));
-    public static final Block GLOW_TORCH = registerBlockWithDefaultItem("glow_torch", new GlowTorchBlock(FabricBlockSettings.copy(Blocks.TORCH)));
+    public static final Block GLOW_TORCH = registerBlock("glow_torch", new GlowTorchBlock(FabricBlockSettings.copy(Blocks.TORCH)));
     public static final Block GLOW_TORCH_WALL = registerBlock("glow_torch_wall", new GlowWallTorchBlock(FabricBlockSettings.copy(GLOW_TORCH).dropsLike(GLOW_TORCH)));
     public static final Block GLOW_CAMPFIRE = registerBlockWithDefaultItem("glow_campfire", new GlowCampfireBlock(true, 2, FabricBlockSettings.copy(Blocks.CAMPFIRE)));
 

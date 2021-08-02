@@ -1,5 +1,6 @@
 package org.infernalstudios.infernalexp.registry;
 
+import net.minecraft.item.WallStandingBlockItem;
 import org.infernalstudios.infernalexp.InfernalExpansion;
 import org.infernalstudios.infernalexp.items.GlowsilkBowItem;
 import org.infernalstudios.infernalexp.items.templates.AbstractDiscItem;
@@ -20,6 +21,11 @@ public class IEItems {
      */
     public static final Item DISC_SOUL_SPUNK = registerMusicDiscItem("music_disc_soul_spunk", 8, IESoundEvents.MUSIC_DISC_SOUL_SPUNK, Rarity.RARE);
     public static final Item DISC_FLUSH = registerMusicDiscItem("music_disc_flush", 7, IESoundEvents.MUSIC_DISC_FLUSH, Rarity.RARE);
+
+    /*
+    Glow Torch
+     */
+    public static final Item GLOW_TORCH = registerItem("glow_torch", new WallStandingBlockItem(IEBlocks.GLOW_TORCH, IEBlocks.GLOW_TORCH_WALL, new Item.Settings().group(InfernalExpansion.TAB)));
 
     /*
     Glowsilk Bow

@@ -1,18 +1,15 @@
 package org.infernalstudios.infernalexp.util;
 
-import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
-import net.minecraft.block.Blocks;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.CampfireBlockEntity;
 import net.minecraft.client.render.block.entity.CampfireBlockEntityRenderer;
-import org.infernalstudios.infernalexp.block.entities.GlowCampfireBlockEntity;
 import org.infernalstudios.infernalexp.registry.IEBlockEntities;
 import org.infernalstudios.infernalexp.registry.IEBlocks;
-
 import org.infernalstudios.infernalexp.registry.IEItems;
+
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.util.Identifier;
@@ -46,7 +43,8 @@ public class IEClient implements ClientModInitializer {
         /*
         Block Entity Render Registry
          */
-        BlockEntityRendererRegistry.INSTANCE.register(IEBlockEntities.GLOW_CAMPFIRE, CampfireBlockEntityRenderer::new);
+        //IEBlockEntities.registerBER((BlockEntityType) IEBlockEntities.GLOW_CAMPFIRE, CampfireBlockEntityRenderer::new);
+        //BlockEntityRendererRegistry.INSTANCE.register(IEBlockEntities.GLOW_CAMPFIRE, CampfireBlockEntityRenderer::new);
 
 
         /*
@@ -64,6 +62,9 @@ public class IEClient implements ClientModInitializer {
         Cut-out Rendering
          */
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                IEBlocks.GLOW_TORCH,
+                IEBlocks.GLOW_TORCH_WALL,
+                IEBlocks.GLOW_LANTERN,
                 IEBlocks.GLOW_CAMPFIRE
         );
 
