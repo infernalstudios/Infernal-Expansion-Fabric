@@ -1,4 +1,4 @@
-package org.infernalstudios.infernalexp.blocks.templates;
+package org.infernalstudios.infernalexp.block.templates;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;

@@ -1,8 +1,7 @@
-package org.infernalstudios.infernalexp.blocks.templates;
+package org.infernalstudios.infernalexp.block.templates;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.util.math.Vector3d;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;

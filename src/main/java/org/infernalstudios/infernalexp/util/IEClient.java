@@ -1,5 +1,13 @@
 package org.infernalstudios.infernalexp.util;
 
+import net.fabricmc.fabric.api.client.rendereregistry.v1.BlockEntityRendererRegistry;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.block.entity.CampfireBlockEntity;
+import net.minecraft.client.render.block.entity.CampfireBlockEntityRenderer;
+import org.infernalstudios.infernalexp.block.entities.GlowCampfireBlockEntity;
+import org.infernalstudios.infernalexp.registry.IEBlockEntities;
 import org.infernalstudios.infernalexp.registry.IEBlocks;
 
 import org.infernalstudios.infernalexp.registry.IEItems;
@@ -14,6 +22,12 @@ public class IEClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+
+        //BlockEntityType.CAMPFIRE = BlockEntityType.create("campfire", BlockEntityType.Builder.create(CampfireBlockEntity::new, Blocks.CAMPFIRE, Blocks.SOUL_CAMPFIRE));
+
+        /*
+        Glowsilk Bow Rendering
+         */
         ModelPredicateProviderRegistry.register(IEItems.GLOWSILK_BOW, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0F;
@@ -28,11 +42,31 @@ public class IEClient implements ClientModInitializer {
             return entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
         });
 
+
+        /*
+        Block Entity Render Registry
+         */
+        BlockEntityRendererRegistry.INSTANCE.register(IEBlockEntities.GLOW_CAMPFIRE, CampfireBlockEntityRenderer::new);
+
+
+        /*
+        Translucent Rendering
+         */
+
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(),
                 IEBlocks.QUARTZ_GLASS,
                 IEBlocks.QUARTZ_GLASS_PANE,
                 IEBlocks.GLOW_GLASS,
                 IEBlocks.GLOW_GLASS_PANE
         );
+
+        /*
+        Cut-out Rendering
+         */
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(),
+                IEBlocks.GLOW_CAMPFIRE
+        );
+
+
     }
 }

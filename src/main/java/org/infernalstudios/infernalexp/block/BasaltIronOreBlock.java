@@ -1,4 +1,4 @@
-package org.infernalstudios.infernalexp.blocks;
+package org.infernalstudios.infernalexp.block;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.PillarBlock;

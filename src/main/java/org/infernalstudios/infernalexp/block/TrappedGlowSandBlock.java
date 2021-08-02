@@ -1,4 +1,4 @@
-package org.infernalstudios.infernalexp.blocks;
+package org.infernalstudios.infernalexp.block;
 
 import org.infernalstudios.infernalexp.registry.IEParticles;
 import org.infernalstudios.infernalexp.registry.IEBlocks;

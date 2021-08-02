@@ -1,14 +1,16 @@
 package org.infernalstudios.infernalexp.registry;
 
-import org.infernalstudios.infernalexp.blocks.BasaltIronOreBlock;
-import org.infernalstudios.infernalexp.blocks.BasalticMagmaBlock;
-import org.infernalstudios.infernalexp.blocks.GlowTorchBlock;
-import org.infernalstudios.infernalexp.blocks.GlowWallTorchBlock;
-import org.infernalstudios.infernalexp.blocks.GlowdustBlock;
-import org.infernalstudios.infernalexp.blocks.TrappedGlowSandBlock;
-import org.infernalstudios.infernalexp.blocks.templates.AbstractStoneButtonBlock;
-import org.infernalstudios.infernalexp.blocks.templates.FungusCapBlock;
-import org.infernalstudios.infernalexp.blocks.templates.LightUpPressurePlateBlock;
+import net.minecraft.block.CampfireBlock;
+import org.infernalstudios.infernalexp.block.BasaltIronOreBlock;
+import org.infernalstudios.infernalexp.block.BasalticMagmaBlock;
+import org.infernalstudios.infernalexp.block.GlowCampfireBlock;
+import org.infernalstudios.infernalexp.block.GlowTorchBlock;
+import org.infernalstudios.infernalexp.block.GlowWallTorchBlock;
+import org.infernalstudios.infernalexp.block.GlowdustBlock;
+import org.infernalstudios.infernalexp.block.TrappedGlowSandBlock;
+import org.infernalstudios.infernalexp.block.templates.AbstractStoneButtonBlock;
+import org.infernalstudios.infernalexp.block.templates.FungusCapBlock;
+import org.infernalstudios.infernalexp.block.templates.LightUpPressurePlateBlock;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
@@ -254,7 +256,7 @@ public class IEBlocks {
     public static final Block GLOW_LANTERN = registerBlockWithDefaultItem("glow_lantern", new LanternBlock(FabricBlockSettings.copy(Blocks.LANTERN)));
     public static final Block GLOW_TORCH = registerBlockWithDefaultItem("glow_torch", new GlowTorchBlock(FabricBlockSettings.copy(Blocks.TORCH)));
     public static final Block GLOW_TORCH_WALL = registerBlock("glow_torch_wall", new GlowWallTorchBlock(FabricBlockSettings.copy(GLOW_TORCH).dropsLike(GLOW_TORCH)));
-
+    public static final Block GLOW_CAMPFIRE = registerBlockWithDefaultItem("glow_campfire", new GlowCampfireBlock(true, 2, FabricBlockSettings.copy(Blocks.CAMPFIRE)));
 
     /*
     Glass Set
