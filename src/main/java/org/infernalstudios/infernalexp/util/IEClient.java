@@ -43,8 +43,8 @@ public class IEClient implements ClientModInitializer {
         /*
         Block Entity Render Registry
          */
-        //IEBlockEntities.registerBER((BlockEntityType) IEBlockEntities.GLOW_CAMPFIRE, CampfireBlockEntityRenderer::new);
-        //BlockEntityRendererRegistry.INSTANCE.register(IEBlockEntities.GLOW_CAMPFIRE, CampfireBlockEntityRenderer::new);
+        //IEBlockEntities.registerBER(IEBlockEntities.GLOW_CAMPFIRE_ENTITY, CampfireBlockEntityRenderer::new);
+
 
 
         /*
@@ -65,7 +65,8 @@ public class IEClient implements ClientModInitializer {
                 IEBlocks.GLOW_TORCH,
                 IEBlocks.GLOW_TORCH_WALL,
                 IEBlocks.GLOW_LANTERN,
-                IEBlocks.GLOW_CAMPFIRE
+                IEBlocks.GLOW_CAMPFIRE,
+                IEBlocks.LUMINOUS_FUNGUS
         );
 
 

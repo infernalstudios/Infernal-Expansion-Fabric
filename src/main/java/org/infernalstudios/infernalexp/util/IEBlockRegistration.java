@@ -1,19 +1,17 @@
 package org.infernalstudios.infernalexp.util;
 
 import org.infernalstudios.infernalexp.InfernalExpansion;
+import org.infernalstudios.infernalexp.registry.IEItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
-import org.infernalstudios.infernalexp.registry.IEItems;
 
 public class IEBlockRegistration {
 

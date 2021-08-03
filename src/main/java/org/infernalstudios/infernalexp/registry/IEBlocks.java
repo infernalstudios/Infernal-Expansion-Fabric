@@ -1,12 +1,12 @@
 package org.infernalstudios.infernalexp.registry;
 
-import net.minecraft.block.CampfireBlock;
 import org.infernalstudios.infernalexp.block.BasaltIronOreBlock;
 import org.infernalstudios.infernalexp.block.BasalticMagmaBlock;
 import org.infernalstudios.infernalexp.block.GlowCampfireBlock;
 import org.infernalstudios.infernalexp.block.GlowTorchBlock;
 import org.infernalstudios.infernalexp.block.GlowWallTorchBlock;
 import org.infernalstudios.infernalexp.block.GlowdustBlock;
+import org.infernalstudios.infernalexp.block.LuminousFungusBlock;
 import org.infernalstudios.infernalexp.block.TrappedGlowSandBlock;
 import org.infernalstudios.infernalexp.block.templates.AbstractStoneButtonBlock;
 import org.infernalstudios.infernalexp.block.templates.FungusCapBlock;
@@ -257,6 +257,16 @@ public class IEBlocks {
     public static final Block GLOW_TORCH = registerBlock("glow_torch", new GlowTorchBlock(FabricBlockSettings.copy(Blocks.TORCH)));
     public static final Block GLOW_TORCH_WALL = registerBlock("glow_torch_wall", new GlowWallTorchBlock(FabricBlockSettings.copy(GLOW_TORCH).dropsLike(GLOW_TORCH)));
     public static final Block GLOW_CAMPFIRE = registerBlockWithDefaultItem("glow_campfire", new GlowCampfireBlock(true, 2, FabricBlockSettings.copy(Blocks.CAMPFIRE)));
+
+    /*
+    Glowsilk Cocoon
+     */
+    public static final Block GLOWSILK_COCOON = registerBlockWithDefaultItem("glowsilk_cocoon", new PillarBlock(FabricBlockSettings.of(Material.LEAVES).sounds(BlockSoundGroup.WOOL).requiresTool().breakByTool(FabricToolTags.HOES).strength(5.0F, 1200.F).luminance(5)));
+
+    /*
+    Luminous Fungus
+     */
+    public static final Block LUMINOUS_FUNGUS = registerBlockWithDefaultItem("luminous_fungus", new LuminousFungusBlock(FabricBlockSettings.of(Material.PLANT).luminance(getLuminanceValueLit(15)).noCollision().sounds(BlockSoundGroup.GRASS)));
 
     /*
     Glass Set

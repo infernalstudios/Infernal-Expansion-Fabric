@@ -6,7 +6,8 @@
   "mixins": [
     "common.MixinBubbleColumnBlock",
     "common.MixinPersistentProjectileEntity",
-    "common.MixinLivingEntity"
+    "common.MixinLivingEntity",
+    "common.MixinArrowEntity"
   ],
   "client": [
     "client.render.MixinParticleManager",

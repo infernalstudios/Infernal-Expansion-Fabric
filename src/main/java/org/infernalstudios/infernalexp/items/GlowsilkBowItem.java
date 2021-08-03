@@ -1,5 +1,7 @@
 package org.infernalstudios.infernalexp.items;
 
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.projectile.ArrowEntity;
 import org.infernalstudios.infernalexp.access.PersistentProjectileEntityAccess;
 
 import net.minecraft.enchantment.EnchantmentHelper;
@@ -16,6 +18,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.world.World;
+import org.infernalstudios.infernalexp.registry.IEEffects;
 
 import java.util.Random;
 
@@ -41,16 +44,19 @@ public class GlowsilkBowItem extends BowItem {
                     itemStack = new ItemStack(Items.ARROW);
                 }
 
-                float f = getPullProgress(i);
-                if (!((double)f < 0.1D)) {
-                    boolean flag1 = playerEntity.getAbilities().creativeMode || (itemStack.getItem() instanceof ArrowItem && isInfinite(stack, itemStack));
+                float pullProgress = getPullProgress(i);
+                if (!((double) pullProgress < 0.1D)) {
+                    boolean isArrowInfinite = playerEntity.getAbilities().creativeMode || (itemStack.getItem() instanceof ArrowItem && isInfinite(stack, itemStack));
                     if (!world.isClient) {
-                        ArrowItem arrowItem = (ArrowItem)(itemStack.getItem() instanceof ArrowItem ? itemStack.getItem() : Items.ARROW);
-                        PersistentProjectileEntity persistentProjectileEntity = arrowItem.createArrow(world, itemStack, playerEntity);
-                        persistentProjectileEntity = ProjectileUtil.createArrowProjectile(playerEntity, itemStack, f);
-                        persistentProjectileEntity.setProperties(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 6.0F, 1.0F);
 
-                        if (f == 1.0F) {
+                        PersistentProjectileEntity persistentProjectileEntity;
+
+                        persistentProjectileEntity = ProjectileUtil.createArrowProjectile(playerEntity, itemStack, pullProgress);
+                        persistentProjectileEntity.setProperties(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, pullProgress * 6.0F, 1.0F);
+
+                        persistentProjectileEntity.setDamage((persistentProjectileEntity.getDamage() / 2.0D) + 0.1D);
+
+                        if (pullProgress == 1.0F) {
                             persistentProjectileEntity.setCritical(true);
                         }
                         int power = EnchantmentHelper.getLevel(Enchantments.POWER, stack);
@@ -67,12 +73,14 @@ public class GlowsilkBowItem extends BowItem {
                             persistentProjectileEntity.setOnFireFor(100);
                         }
 
-                        stack.damage(1, playerEntity, (p) -> {
-                            p.sendToolBreakStatus(playerEntity.getActiveHand());
-                        });
+                        stack.damage(1, playerEntity, (p) -> p.sendToolBreakStatus(playerEntity.getActiveHand()));
 
-                        if (flag1 ||playerEntity.getAbilities().creativeMode && (itemStack.getItem() == Items.SPECTRAL_ARROW) || itemStack.getItem() == Items.TIPPED_ARROW) {
+                        if (isArrowInfinite ||playerEntity.getAbilities().creativeMode && (itemStack.getItem() == Items.SPECTRAL_ARROW) || itemStack.getItem() == Items.TIPPED_ARROW) {
                             persistentProjectileEntity.pickupType = PersistentProjectileEntity.PickupPermission.CREATIVE_ONLY;
+                        }
+
+                        if (persistentProjectileEntity instanceof ArrowEntity) {
+                            ((ArrowEntity) persistentProjectileEntity).addEffect(new StatusEffectInstance(IEEffects.LUMINOUS, 3600));
                         }
 
                         ((PersistentProjectileEntityAccess) persistentProjectileEntity).setGlow(true);
@@ -81,7 +89,7 @@ public class GlowsilkBowItem extends BowItem {
                     }
 
                     world.playSound(null, playerEntity.getX(), playerEntity.getY(), playerEntity.getZ(), SoundEvents.ENTITY_ARROW_SHOOT, SoundCategory.PLAYERS, 1.0F, 1.0F / (random.nextFloat() * 0.4F));
-                    if (!flag1 && !playerEntity.getAbilities().creativeMode) {
+                    if (!isArrowInfinite && !playerEntity.getAbilities().creativeMode) {
                         playerEntity.getInventory().removeOne(itemStack);
                     }
 
@@ -96,6 +104,5 @@ public class GlowsilkBowItem extends BowItem {
             return arrow.getItem()== Items.ARROW;
         } else return false;
     }
-
 
 }

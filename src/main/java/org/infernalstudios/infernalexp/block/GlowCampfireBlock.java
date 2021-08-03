@@ -1,9 +1,10 @@
 package org.infernalstudios.infernalexp.block;
 
+import org.infernalstudios.infernalexp.block.entities.GlowCampfireBlockEntity;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.CampfireBlockEntity;
 import net.minecraft.util.math.BlockPos;
 
 public class GlowCampfireBlock extends CampfireBlock {
@@ -13,6 +14,6 @@ public class GlowCampfireBlock extends CampfireBlock {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new CampfireBlockEntity(pos, state);
+        return new GlowCampfireBlockEntity(pos, state);
     }
 }
